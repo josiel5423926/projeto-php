@@ -1,0 +1,86 @@
+#nav_menu {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #34C47C;
+    margin-top: 22px;
+}
+
+#nav_menu ul,
+#nav_list li,
+#nav_menu nav,
+#nav_menu img {
+    display: inline-block;
+}
+
+#nav_list li,
+a {
+    text-decoration: none;
+}
+
+#nav_list li {
+    margin: 0 120px;
+}
+
+/*tabela do título*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #34C47C;
+}
+
+#tabela_titulo {
+    width: 100%;
+    text-align: center;
+    height: 100px;
+}
+
+#nav_menu img {
+    width: 80px;
+    position: absolute;
+    left: -120px;
+    margin-left: 20%;
+    top: 25px;
+
+
+}
+
+/*rodapé*/
+#rodapé {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: rgb(5, 55, 55);
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tb_lojas {
+    width: 100%;
+    color: rgb(3, 71, 71);
+    text-align: center;
+
+}
+
+.produtos_motos {
+    border: 0;
+    width: 100%;
+    text-align: center;
+
+}
+
+.produtos_motos td {
+    width: 20%;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.formulário {
+    align-content: center;
+    height: 20%;
+    width: 60%;
+}
+
+a {
+    color: #34C47C;
+}
