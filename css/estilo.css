@@ -1,130 +1,98 @@
 .nav_menu {
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: #34C47C;
-    margin-top: 22px;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #34c47c;
+  margin-top: 22px;
 }
-
 
 .nav_menu ul,
 .nav_list li,
 .nav_menu nav,
 .nav_menu img {
-    display: inline-block;
+  display: inline-block;
 }
 
 .nav_list li,
 a {
-    text-decoration: none;
-    color: #34C47C;
+  text-decoration: none;
+  color: #34c47c;
 }
 
 .nav_list li {
-    margin: 0 120px;
+  margin: 0 120px;
 }
 
 /*tabela do título*/
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #34C47C;
-    margin: 0px;
-    padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #34c47c;
+  margin: 0px;
+  padding: 0px;
 }
 
 .main_titulo {
-    width: 100%;
-    text-align: center;
-    height: 100px;
-    margin-top: 60px;
-    color: rgb(5, 55, 55);
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  margin-top: 60px;
+  color: rgb(5, 55, 55);
 }
 
 .nav_menu img {
-    width: 80px;
-    position: absolute;
-    left: -120px;
-    margin-left: 20%;
-    top: 25px;
+  width: 80px;
+  position: absolute;
+  left: -120px;
+  margin-left: 20%;
+  top: 25px;
+}
+
+.corpo {
+  display: flex;
+  color: white;
+}
+
+.categorias {
+  width: 20%;
+  min-width: 200px;
 }
 
 .container_produtos {
-    /* width: 200%;
-    display: flex;
-    justify-content: end;*/
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .container_intens {
-    /*float: right;
-    width: 95%;
-    margin-left: 2%;
-    height: 290px;
-    margin-bottom: 20%;
-  
-    width: 80%;
-    float: right;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  */
-    width: 200px;
-    height: 100px;
-    line-height: 200px;
-
-
-
-
-}
-
-
-.container_intens h3 {
-    color: white;
+  width: 20%;
+  padding: 10px;
+  text-align: center;
 }
 
 .container_intens img {
-    max-width: 100%;
-    object-fit: cover;
-    width: 120%;
-    height: 100%;
-}
-
-
-.categorias {
-    font-family: arial;
-    color: white;
-    display: flex;
-
-
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .tb_lojas {
-    width: 100%;
-    color: rgb(3, 71, 71);
-    text-align: center;
-
+  width: 100%;
+  color: rgb(3, 71, 71);
+  text-align: center;
 }
 
-
 .formulário {
-    align-content: center;
-    height: 20%;
-    width: 60%;
+  align-content: center;
+  height: 20%;
+  width: 60%;
 }
 
 /*rodapé*/
 #rodapé {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: rgb(5, 55, 55);
-    width: 25%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: rgb(5, 55, 55);
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
