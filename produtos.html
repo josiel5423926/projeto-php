@@ -4,29 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="js/funcoes.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>Produtos</title>
 
 </head>
 
-<body>
+<body style="width: 100%; height: 100%;" width: 100%>
 
     <!--início do Menu-->
-    <header id="nav_menu">
+    <header>
         <nav>
-            <ul id="nav_list">
-                <li><a href="index.html"><img src="img/logo.png" alt=""></a></li>
-                <li> <a href="produtos.html">Motos</a></li>
-                <li> <a href="lojas.html">Nossas lojas</a></li>
-                <li> <a href="contato.html">Contato</a></li>
-            </ul>
+            <div class="nav_menu">
+                <ul class="nav_list">
+                    <li><a href="index.html"><img src="img/logo.png" alt=""></a></li>
+                    <li> <a href="produtos.html">Motos</a></li>
+                    <li> <a href="lojas.html">Nossas lojas</a></li>
+                    <li> <a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <!--fim do Menu-->
     <!--título da págna início-->
     <main>
-        <div id="tabela_titulo">
+
+        <div class="main_titulo">
             <div>
                 <div>
                     <h2 style="color:rgb(5, 55, 55); ">Motos</h2>
@@ -34,140 +38,143 @@
             </div>
         </div>
         <hr>
-        <!--título da págna fim-->
 
-        <table class="produtos_motos">
-            <tr>
-                <td rowspan="5" style="width:20%;text-align:left;vertical-align:top;">
-                    <h3 style="font-family: arial;color: white;">Categoria</h3>
-                    <ul style=" color: white;">
-                        <li>Honda (4)</li>
-                        <li>yamaha (3)</li>
-                        <li>Ducati (6)</li>
-                        <li>Harley Davidson (2)</li>
-                        <li>Kawasaki (5)</li>
-                    </ul>
-                </td>
-                <!--Honda início -->
-                <td>
-                    <img src="img/honda_1.jpg" width="120px" ;>
-                    <h3 style="color: white;">CBR 1000 rr</h3>
-                    <hr>
-                    <del>R$ 80.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 78.000,00</big></strong>
-                </td>
+        <div class="container_produtos">
+            <div class="categorias">
+                <!--catálogo-->
+                <h3>Categorias</h3>
+                <ul>
+                    <li onclick="exibir_todos()">Todos (12)</li>
+                    <li onclick="exibir_categoria('honda')">Honda (3)</li>
+                    <li onclick="exibir_categoria('yamaha')">yamaha (3)</li>
+                    <li onclick="exibir_categoria('ducati')">Ducati (2)</li>
+                    <li onclick="exibir_categoria('harley')">Harley Davidson (2)</li>
+                    <li onclick="exibir_categoria('kawasaki')">Kawasaki (2)</li>
+                </ul>
+            </div>
 
-                <td>
-                    <img src="img/honda_2.jpg" width="120px" ;>
-                    <h3 style="color:white; ">CB Twister CBS </h3>
-                    <hr>
-                    <del>R$ 12.500,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 11.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/honda_3.jpg" width="120px" ;>
-                    <h3 style="color:white; ">cb 600 2006</h3>
-                    <hr>
-                    <del>R$ 22.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 21.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/ducati_2.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Ducati Monster 1200</h3>
-                    <hr>
-                    <del>R$ 45.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 44000,00</big></strong>
-                </td>
-            </tr>
-            <tr>
-                <!--Honda fim-->
+            <div class="container_intens" id="honda" style="display: block;">
+                <img src="img/honda_1.jpg" width="120px" ; onclick="destaque(this)">
+                <h3>CBR 1000 rr</h3>
+                <hr>
+                <del>R$ 80.000,00</del>
                 <br>
-                <!--yamaha início-->
-                <td>
-                    <img src="img/yamaha_1.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Yamaha R1</h3>
-                    <hr>
-                    <del>R$ 90.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 87.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/yamaha_3.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Yamaha R3 </h3>
-                    <hr>
-                    <del>R$ 106.500,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 103.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/yamaha_2.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Yamaha R6</h3>
-                    <hr>
-                    <del>R$ 22.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 19.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/ducati_3.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Ducati 1299 Panigale </h3>
-                    <hr>
-                    <del>R$ 45.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 44000,00</big></strong>
-                </td>
-            </tr>
-            <!--yamaha fim-->
-            <tr>
-                <!--Honda início-->
-                <td>
-                    <img src="img/Harley_Davidson_4.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Harley-Davidson Streetfighter 975</h3>
-                    <hr>
-                    <del>R$ 120.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 117.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/Harley_Davidson_2.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Harley Davidson Xl 883n </h3>
-                    <hr>
-                    <del>R$ 53.500,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 52.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/Kawasaki_1.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Kawasaki ER-6n</h3>
-                    <hr>
-                    <del>R$ 93.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 89.000,00</big></strong>
-                </td>
-                <td>
-                    <img src="img/Kawasaki_2.jpg" width="120px" ;>
-                    <h3 style="color:white; ">Kawasaki Ninja</h3>
-                    <hr>
-                    <del>R$ 85.000,00</del>
-                    <br>
-                    <strong style="color:red"><big>R$ 78.000,00</big></strong>
-                </td>
-            </tr>
-            <!--Honda fim-->
+                <strong style="color:red"><big>R$ 78.000,00</big></strong>
+            </div>
+            <div class="container_intens" id="honda" style="display: block;">
+                <img src="img/honda_2.jpg" onclick="destaque(this)">
+                <h3>CB Twister CBS </h3>
+                <hr>
+                <del>R$ 12.500,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 11.000,00</big></strong>
+            </div>
 
-        </table>
+            <div class="container_intens" id="honda" style="display: block;">
+                <img src="img/honda_3.jpg" onclick="destaque(this)">
+                <h3>cb 600 2006</h3>
+                <hr>
+                <del>R$ 22.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 21.000,00</big></strong>
+            </div>
+
+            <div class="container_intens" id="ducati" style="display: block;">
+                <img src="img/ducati_2.jpg" onclick="destaque(this)">
+                <h3>Ducati Monster 1200</h3>
+                <hr>
+                <del>R$ 45.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 44000,00</big></strong>
+            </div>
+
+            <div class="container_intens" id="yamaha" style="display: block;">
+                <img src="img/yamaha_1.jpg" onclick="destaque(this)">
+                <h3>Yamaha R1</h3>
+                <hr>
+                <del>R$ 90.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 87.000,00</big></strong>
+            </div>
+
+            <div class="container_intens" id="yamaha" style="display: block;">
+                <img src="img/yamaha_3.jpg" onclick="destaque(this)">
+                <h3>Yamaha R3 </h3>
+                <hr>
+                <del>R$ 106.500,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 103.000,00</big></strong>
+            </div>
+
+            <div class="container_intens" id="yamaha" style="display: block;">
+                <img src="img/yamaha_2.jpg" onclick="destaque(this)">
+                <h3>Yamaha R6</h3>
+                <hr>
+                <del>R$ 22.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 19.000,00</big></strong>
+            </div>
+
+            <div class="container_intens" id="ducati" style="display: block;">
+                <img src="img/ducati_3.jpg" onclick="destaque(this)">
+                <h3>Ducati 1299 Panigale </h3>
+                <hr>
+                <del>R$ 45.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 44000,00</big></strong>
+            </div>
+
+            <div class="container_intens" id="harley" style="display: block;">
+                <img src="img/Harley_Davidson_2.jpg" onclick="destaque(this)">
+                <h3>Harley Davidson Xl 883n </h3>
+                <hr>
+                <del>R$ 53.500,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 52.000,00</big></strong>
+            </div>
+
+            <div class="container_intens" id="harley" style="display: block;">
+                <img src="img/Harley_Davidson_4.jpg" onclick="destaque(this)">
+                <h3>Harley-Davidson Streetfighter 975</h3>
+                <hr>
+                <del>R$ 120.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 117.000,00</big></strong>
+            </div>
+
+
+            <div class="container_intens" id="kawasaki" style="display: block;">
+                <img src="img/Kawasaki_1.jpg" onclick="destaque(this)">
+                <h3>Kawasaki ER-6n</h3>
+                <hr>
+                <del>R$ 93.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 89.000,00</big></strong>
+            </div>
+            <div class="container_intens" id="kawasaki" style="display: block;">
+                <img src="img/Kawasaki_2.jpg" onclick="destaque(this)">
+                <h3>Kawasaki Ninja</h3>
+                <hr>
+                <del>R$ 85.000,00</del>
+                <br>
+                <strong style="color:red"><big>R$ 78.000,00</big></strong>
+            </div>
+
+        </div>
+
+
     </main>
-    <br><br>
+    <br>
+    <br>
 
     <!--rodapé-->
+
     <footer id="rodapé">
+
         <h4 style="color:rgb(99, 37, 37); ">Formas de pagamento</h4>
         <br>
         <img src="img/formas-de-pagamento.png" alt=""><br>
-        &copy; <strong>Full fullStack Motos</strong>
+        &copy; <strong>Full Stack Motos</strong>
 
     </footer>
 
