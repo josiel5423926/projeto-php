@@ -32,3 +32,17 @@ let destaque = (imagem) => {
         imagem.parentNode.style.width = "30%";
     }
 };
+
+let exibirborda = (t) => {
+    console.log(t);
+    t.style.border = "double";
+    t.style.color = "blue"
+    t.style.width = "100%";
+    t.style.padding = " 2%";
+
+};
+
+let retirarborda = (y) => {
+    console.log(y);
+    y.style.border = "none";
+};

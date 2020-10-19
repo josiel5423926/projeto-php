@@ -20,7 +20,7 @@ a {
 }
 
 .nav_list li {
-  margin: 0 120px;
+  margin: 0 110px;
 }
 
 /*tabela do título*/
@@ -40,7 +40,8 @@ body {
 }
 
 .nav_menu img {
-  width: 80px;
+  width: 90px;
+  height: 45px;
   position: absolute;
   left: -120px;
   margin-left: 20%;
@@ -59,7 +60,8 @@ body {
 
 .container_produtos {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
+  /*row wrap*/
 }
 
 .container_intens {
