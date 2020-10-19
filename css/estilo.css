@@ -61,7 +61,7 @@ body {
 .container_produtos {
   display: flex;
   flex-flow: wrap;
-  /*row wrap*/
+  
 }
 
 .container_intens {
