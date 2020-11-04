@@ -13,19 +13,12 @@
 
 <body>
     <!--início do Menu-->
-    <header>
-        <nav>
-            <div class="nav_menu">
-                <ul class="nav_list">
-                    <li><a href="index.html"><img src="img/logo.png" alt=""></a></li>
-                    <li> <a href="produtos.html">Motos</a></li>
-                    <li> <a href="lojas.html">Nossas lojas</a></li>
-                    <li> <a href="contato.html">Contato</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
- <!--fim do Menu-->
+    <?php
+    include('./menu_rodape/menu.html');
+    ?>
+
+
+    <!--fim do Menu-->
     <main>
         <!--título da págna início-->
         <div class="main_titulo">
@@ -63,13 +56,10 @@
     <br>
     <br>
     <!--rodapé-->
-    <footer id="rodapé">
-        <h4 style="color:rgb(99, 37, 37); ">Formas de pagamento</h4>
-        <br>
-        <img src="img/formas-de-pagamento.png" alt=""><br>
-        &copy; <strong>Full Stack Motos</strong>
+    <?php
+    include('./menu_rodape/rodape.html');
+    ?>
 
-    </footer>
 </body>
 
 </html>
