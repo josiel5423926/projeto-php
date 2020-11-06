@@ -4,8 +4,6 @@ $username = "root";
 $password = "";
 $database = "fullstackmotos";
 
-global $conex;
-
 $conexao = mysqli_connect($servername, $username, $password, $database);
 
 if (!$conexao) {

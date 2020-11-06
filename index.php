@@ -13,3 +13,6 @@
 </main>
 
 <?php include('./menu_rodape/rodape.html'); ?>
+<?php
+mysqli_close($conexao);
+?>

@@ -46,7 +46,7 @@
             </ul>
         </div>
 
-        <div class=" bg-white  col-12 col-md-9  d-flex  flex-wrap">
+        <div class=" bg-white  col-12 col-md-9 p-1  d-flex  flex-wrap">
             <?php
             $sql = "select * from produto";
             $result = $conexao->query($sql);
@@ -57,7 +57,7 @@
             ?>
 
 
-                    <div class="card col-md-6 col-lg-4 container_items" id="<?php echo $rows['nome']; ?>" style="width: 10rem;">
+                    <div class="card col-md-6 col-lg-4  container_items" id="<?php echo $rows['nome']; ?>" style="width: 10rem;">
                         <img class="card-img-top img-fluid" src="<?php echo $rows['imagem']; ?>" onclick="destaque(this)" onmousemove="exibirborda(this)" onmouseout="retirarborda(this)">
 
                         <hr class="mt-2 mb-1">

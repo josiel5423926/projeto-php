@@ -9,9 +9,6 @@ preco_final varchar(45) not null,
 imagem varchar(200) not null);
 
 
--- ALTER TABLE `fullstackmotos`.`produto` 
--- DROP COLUMN `produtocol`;
-
 -- DELETE FROM produto 
  -- WHERE idproduto = 6;
 

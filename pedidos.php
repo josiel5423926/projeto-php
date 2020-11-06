@@ -1,14 +1,6 @@
+<?php require("./includes/conexao.php"); ?>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "fullstackmotos";
 
-$conexao = mysqli_connect($servername, $username, $password, $database);
-
-if (!$conexao) {
-    die("Falhou a conexão" . mysqli_connect_error());
-}
 if (
     isset($_POST['nome_cliente']) && isset($_POST['endereco']) && isset($_POST['telefone']) &&
     isset($_POST['nome_produto']) && isset($_POST['valor_unitario']) && isset($_POST['quantidade']) &&
@@ -33,92 +25,108 @@ if (
     $result = $conexao->query($sql);
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-    <script src="js/funcoes.js"></script>
-    <title>Pedidos</title>
-</head>
 
-<body>
-    <!--início do Menu-->
-    <?php
-    include('./menu_rodape/menu.html');
-    ?>
+<?php include('./menu_rodape/menu.html'); ?>
 
-    <!--fim do Menu-->
-    <main>
-        <!--título da págna início-->
-        <div class="main_titulo">
-            <h2>Faça seu pedido</h2>
-        </div>
-        <hr />
-    </main>
-    <div class=" bloco_pedido">
+<main>
+    <h1 class="h3 text-center p-3">Faça seu pedido</h1>
+    <hr class="mt-0 mb-5">
 
-        <form method="POST" action="">
-            <label>Nome:</label>
-            <input type=" text" name="nome_cliente" placeholder="Digite seu nome: "></input> <br> <br>
-            <label>Endereco:</label>
-            <input type=" text" name="endereco" placeholder="Digite seu endereco: "></input> <br> <br>
-            <label>Telefone:</label>
-            <input type=" text" name="telefone" placeholder="Digite seu telefone: "></input> <br> <br>
-            <label>produto:</label>
-            <input type=" text" name="nome_produto" placeholder="Digite seu nome produto: "></input> <br> <br>
-            <label>valor unitario:</label>
-            <input type=" text" name="valor_unitario" placeholder="Digite seu valor unitario: "></input> <br> <br>
-            <label>quantidade:</label>
-            <input type=" text" name="quantidade" placeholder="Digite seu Quantidade: "></input> <br> <br>
-            <label>valor gittotal:</label>
-            <input type=" text" name="valor_total" placeholder="Digite seu Valor total: "></input> <br><br>
-            <div class="botão_formulario_venda">
-                <input type="submit" name="submit" value="Enviar" ">
-                </div>
-            </form>
-    
-        <div class=" mostrar_formulario_pedido">
-                <div class=" label_motrar_pedido">
-                    <label>Mostrar Pedidos:</label>
-                </div>
+    <div class="d-flex justify-content-around">
+        <form class="bg-white mx-auto p-2 m-1 col-12 col-md-4 float-left" method="POST" action="">
+            <h1 class="text-center pb-5 text-primary">Pedidos</h1>
 
-                <?php
-                $sql = "select * from tb_pedido";
-                $result = $conexao->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($rows = $result->fetch_assoc()) {
-                        echo "Nome: ", $rows['nome_cliente'], "<br>";
-                        echo "Endereço: ", $rows['endereco'], "<br>";
-                        echo "telefone: ", $rows['telefone'], "<br>";
-                        echo "Produto: ", $rows['nome_produto'], "<br>";
-                        echo "Valor unitario: ", $rows['valor_unitario'], "<br>";
-                        echo "Quantidade: ", $rows['quantidade'], "<br>";
-                        echo "valor total: ", $rows['valor_total'], "<br>";
-                        echo "Data: ", $rows['data'], "<br>";
-                        echo "<hr>";
-                    }
-                } else {
-                    echo "Nenhum pedido !";
-                } ?>
-
-                </>
+            <div class="form-group">
+                <label for="formGroupExampleInput " class="text-primary"> <strong>Nome:</strong></label>
+                <input type="text" name="nome_cliente" class="form-control" id="formGroupExampleInput" placeholder="Digite seu nome:">
             </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="text-primary"> <strong>Endereço:</strong></label>
+                <input type="text" name="endereco" class="form-control" id="formGroupExampleInput" placeholder="Digite seu endereço: ">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="text-primary"> <strong>Telefone:</strong></label>
+                <input type="text" name="telefone" class="form-control" id="formGroupExampleInput" placeholder="Digite seu telefone: ">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="text-primary"> <strong>Produto:</strong></label>
+                <input type="text" name="nome_produto" class="form-control" id="formGroupExampleInput" placeholder="Digite o nome do produto: ">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="text-primary"> <strong>Valor do produto:</strong></label>
+                <input type="text" name="valor_unitario" class="form-control" id="formGroupExampleInput" placeholder="valor do produto">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="text-primary"> <strong>Quantidade:</strong></label>
+                <input type="text" name="quantidade" class="form-control" id="formGroupExampleInput" placeholder="quantidade de item:">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput" class="text-primary"> <strong>Valor Total:</strong></label>
+                <input type="text" name="valor_total" class="form-control" id="formGroupExampleInput" placeholder="valor total:">
+            </div>
+            <div class="text-center p-3">
+                <button type="submit" name="submit" class="btn btn-outline-primary mb-3  px-4 rounded-pill ">Enviar</button>
+            </div>
+
+        </form>
+
+        <div class="bg-white   m-1 col-12 col-md-8">
+
+            <h1 class="text-center pb-5 mx3 text-primary">Pedidos realizados</h1>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Nome</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Valor unitário</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Valor Total</th>
+                        <th scope="col">Data do pedido</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    <?php
+                    $sql = "select * from tb_pedido";
+                    $result = $conexao->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($rows = $result->fetch_assoc()) {
+                            $nome_cliente =  $rows['nome_cliente'];
+                            $endereco  = $rows['endereco'];
+                            $telefone =  $rows['telefone'];
+                            $nome_produto =  $rows['nome_produto'];
+                            $valor_unitario =  $rows['valor_unitario'];
+                            $quantidade =  $rows['quantidade'];
+                            $valor_total =  $rows['valor_total'];
+                            $data =  $rows['data']; ?>
+                            <tr>
+
+                                <td><?php echo $nome_cliente ?></td>
+                                <td><?php echo $endereco ?></td>
+                                <td><?php echo $telefone ?></td>
+                                <td><?php echo $nome_produto ?></td>
+                                <td><?php echo  $valor_unitario ?></td>
+                                <td><?php echo $quantidade ?></td>
+                                <td><?php echo $valor_total ?></td>
+                                <td><?php echo $data ?></td>
+
+                            </tr>
+                    <?php }
+                    } ?>
+                </tbody>
+            </table>
+
+        </div>
+
     </div>
-    <BR>
-    <hr>
-    <!--rodapé-->
-    <?php
-    include('./menu_rodape/rodape.html');
-    ?>
 
-</body>
-
-</html>
-
-<?php
-mysqli_close($conexao);
-?>
+</main>
+<?php include('./menu_rodape/rodape.html'); ?>

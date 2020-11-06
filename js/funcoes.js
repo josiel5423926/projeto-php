@@ -13,6 +13,7 @@ function exibir_categoria(categoria) {
     }
 };
 
+
 let destaque = (imagem) => {
 
     if (imagem.style.height === "80%") {

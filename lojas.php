@@ -9,7 +9,6 @@
     <table class="table table-borderless text-center">
         <thead>
             <tr>
-
                 <th scope="col">São Paulo</th>
                 <th scope="col">Santa Catarina</th>
                 <th scope="col">Santa Catarina</th>
