@@ -1,65 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php require("./includes/conexao.php"); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <script src="js/funcoes.js"></script>
-    <title>lojas</title>
+<?php include('./menu_rodape/menu.html'); ?>
 
+<main class="container">
 
-</head>
-
-<body>
-    <!--início do Menu-->
-    <?php
-    include('./menu_rodape/menu.html');
-    ?>
-
-
-    <!--fim do Menu-->
-    <main>
-        <!--título da págna início-->
-        <div class="main_titulo">
-            <h2>Nossas lojas</h2>
-        </div>
-        <hr>
-        <!--título da págna fim-->
-        <table class="tb_lojas">
+    <h1 class="h3 text-center p-3">Nossas lojas</h1>
+    <hr class="mt-0 mb-5">
+    <table class="table table-borderless text-center">
+        <thead>
             <tr>
-                <td>
-                    <h2>Rio de Janeiro</h2>
-                    <p>Avenida Presidente Vargas, 5000</p>
-                    <p>10&deg; andar</p>
-                    <p>Centro</p>
-                    <p>(21) 3333-3333</p>
-                </td>
-                <td>
-                    <h2>São Paulo</h2>
-                    <p>Avenida Paulista, 987</p>
-                    <p>3&deg; andar</p>
-                    <p>Jardins</p>
-                    <p>(11) 4444-4444</p>
-                </td>
-                <td>
-                    <h2>Santa Catarina</h2>
-                    <p>Rua Major Ávila,370</p>
-                    <p>Vila Mariana</p>
-                    <p>(47) 5555-5555</p>
-                </td>
+
+                <th scope="col">São Paulo</th>
+                <th scope="col">Santa Catarina</th>
+                <th scope="col">Santa Catarina</th>
             </tr>
-        </table>
-    </main>
-    <hr>
-    <br>
-    <br>
-    <br>
-    <!--rodapé-->
-    <?php
-    include('./menu_rodape/rodape.html');
-    ?>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Avenida Franco Vargas, 5000</td>
+                <td>Avenida Paulista, 987</td>
+                <td>Rua Major Ávila,370</td>
 
-</body>
+            </tr>
+            <tr>
+                <td>10&deg; andar</td>
+                <td>3&deg; andar</td>
+                <td>Vila Mariana</td>
 
-</html>
+            </tr>
+            <tr>
+                <td>(21) 3333-3333</td>
+                <td>(11) 4444-4444</td>
+                <td>(47) 5555-5555</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</main>
+
+<?php include('./menu_rodape/rodape.html'); ?>

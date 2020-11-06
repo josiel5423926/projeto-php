@@ -1,111 +1,89 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "fullstackmotos";
+<?php require("./includes/conexao.php"); ?>
 
-$conexao = mysqli_connect($servername, $username, $password, $database);
-
-if (!$conexao) {
-    die("Falhou a conexão" . mysqli_connect_error());
-}
-
+<?php include('./menu_rodape/menu.html');
 ?>
 
-<!-- fim da conexão-->
+<main class="container">
 
-<!DOCTYPE html>
-<html lang="pt-br">
+    <h1 class="h3 text-center p-3">Motos</h1>
 
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <script src="js/funcoes.js"></script>
+    <hr class="mt-0 mb-5">
+    <div class="d-flex justify-content-around">
 
 
-    <title>Produtos</title>
+        <div class=" bg-white  col-12 col-md-3  ">
 
-</head>
 
-<body>
+            <ul class="list-group text-primary   ">
+                <h2 class="h3 py-3">Categorias</h2>
 
-    <!--início do Menu-->
-    <?php
-    include('./menu_rodape/menu.html');
-    ?>
+                <li class=" list-group-item d-flex justify-content-between align-items-center" onclick="exibir_categoria('todos')">
+                    Todos
+                    <span class="badge badge-primary badge-pill">12</span>
+                </li>
 
-    <!--fim do Menu-->
-    <!--título da págna início-->
-    <main>
+                <li class="list-group-item d-flex justify-content-between align-items-center" onclick="exibir_categoria('honda')">
+                    Honda
+                    <span class="badge badge-primary badge-pill">3</span>
+                </li>
 
-        <div class="main_titulo">
-            <div>
-                <div>
-                    <h2 style="color:rgb(5, 55, 55); ">Motos</h2>
-                    <h2 style="color:rgb(5, 55, 55); ">seu pedido</h2>
-                </div>
-            </div>
+                <li class="list-group-item d-flex justify-content-between align-items-center" onclick="exibir_categoria('Yamaha')">
+                    yamaha
+                    <span class="badge badge-primary badge-pill">3</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center" onclick="exibir_categoria('Ducati')">
+                    Ducati
+                    <span class="badge badge-primary badge-pill">2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center" onclick="exibir_categoria('Harley Davidson')">
+                    Harley Davidson
+                    <span class="badge badge-primary badge-pill">2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center" onclick="exibir_categoria('Kawasaki')">
+                    Kawasaki
+                    <span class="badge badge-primary badge-pill">2</span>
+                </li>
+            </ul>
         </div>
-        <hr>
-        <div class="corpo">
-            <div class="categorias">
-                <!--catálogo-->
-                <h3>Categorias</h3>
-                <ul>
 
-                    <li onclick="exibir_categoria('todos')">Todos (12)</li>
-                    <li onclick="exibir_categoria('honda')">Honda (3)</li>
-                    <li onclick="exibir_categoria('Yamaha')">yamaha (3)</li>
-                    <li onclick="exibir_categoria('Ducati')">Ducati (2)</li>
-                    <li onclick="exibir_categoria('Harley Davidson')">Harley Davidson (2)</li>
-                    <li onclick="exibir_categoria('Kawasaki')">Kawasaki (2)</li>
-                </ul>
-            </div>
+        <div class=" bg-white  col-12 col-md-9  d-flex  flex-wrap">
+            <?php
+            $sql = "select * from produto";
+            $result = $conexao->query($sql);
 
-            <div class="container_produtos">
-                <?php
-                $sql = "select * from produto";
-                $result = $conexao->query($sql);
+            if ($result->num_rows > 0) {
+                while ($rows = $result->fetch_assoc()) {
 
-                if ($result->num_rows > 0) {
-                    while ($rows = $result->fetch_assoc()) {
+            ?>
 
-                ?>
-                        <div class="container_intens" id="<?php echo $rows['nome']; ?>" style="display: block;">
-                            <img src="<?php echo $rows['imagem']; ?>" onclick="destaque(this)" onmousemove="exibirborda(this)" onmouseout="retirarborda(this)">
-                            <h3><?php echo $rows['descricao']; ?></h3>
-                            <hr>
-                            <del>R$ <?php echo $rows['preco']; ?></del>
-                            <br>
-                            <strong style="color:red"><big>R$ <?php echo $rows['preco_final']; ?></big></strong>
-                        </div>
 
-                <?php
-                    }
-                } else {
-                    echo "Nenhum produto cadastrado !";
-                } ?>
+                    <div class="card col-md-6 col-lg-4 container_items" id="<?php echo $rows['nome']; ?>" style="width: 10rem;">
+                        <img class="card-img-top img-fluid" src="<?php echo $rows['imagem']; ?>" onclick="destaque(this)" onmousemove="exibirborda(this)" onmouseout="retirarborda(this)">
 
-            </div>
+                        <hr class="mt-2 mb-1">
+                        <h3 class="h5 text-primary "><?php echo $rows['descricao']; ?></h3>
+                        <hr class="mt-2 mb-1">
+                        <div class="text-muted"><del>R$ <?php echo $rows['preco'];  ?></del></div>
+                        <div class="h4  text-danger">R$ <?php echo $rows['preco_final']; ?></div>
+
+                        <a href="pedidos.php" class="btn btn-primary">Comprar</a>
+
+                    </div>
+
+            <?php
+                }
+            } else {
+                echo "Nenhum produto cadastrado !";
+            }
+            mysqli_close($conexao);
+            ?>
 
         </div>
 
-    </main>
-    <br>
-    <br>
+    </div>
 
-    <!--rodapé-->
-
-    <?php
-    include('./menu_rodape/rodape.html');
-    ?>
-
-</body>
-
-</html>
+</main>
 
 <?php
-mysqli_close($conexao);
+include('./menu_rodape/rodape.html');
 ?>

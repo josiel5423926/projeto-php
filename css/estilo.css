@@ -1,80 +1,4 @@
-.nav_menu {
-  background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #34c47c;
-  margin-top: 22px;
-}
-
-.nav_menu ul,
-.nav_list li,
-.nav_menu nav,
-.nav_menu img {
-  display: inline-block;
-}
-
-.nav_list li,
-a {
-  text-decoration: none;
-  color: #34c47c;
-}
-
-.nav_list li {
-  margin: 0 110px;
-}
-
-/*tabela do título*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #34c47c;
-  margin: 0px;
-  padding: 0px;
-}
-
-.main_titulo {
-  width: 100%;
-  text-align: center;
-  height: 100px;
-  margin-top: 60px;
-  color: rgb(5, 55, 55);
-}
-
-.nav_menu img {
-  width: 90px;
-  height: 45px;
-  position: absolute;
-  left: -120px;
-  margin-left: 20%;
-  top: 25px;
-}
-
-.corpo {
-  display: flex;
-  color: white;
-}
-
-.categorias {
-  width: 20%;
-  min-width: 200px;
-}
-
-.container_produtos {
-  display: flex;
-  flex-flow: wrap;
-
-}
-
-.container_intens {
-  width: 20%;
-  padding: 10px;
-  text-align: center;
-}
-
-.container_intens img {
-  object-fit: cover;
-  height: 50%;
-  width: 100%;
-}
+/*
 
 .tb_lojas {
   width: 100%;
@@ -82,24 +6,11 @@ body {
   text-align: center;
 }
 
-/*rodapé*/
-#rodapé {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: rgb(5, 55, 55);
-  width: 25%;
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .bloco_pedido {
   color: rgb(5, 55, 55);
   display: flex;
   width: 90%;
 }
-
 
 form {
   float: left;
@@ -109,14 +20,12 @@ form {
   width: 30%;
 }
 
-
 .mostrar_formulario_pedido {
   width: 30%;
   border: solid;
   float: right;
   margin-left: 20%;
   padding: 2%;
-
 
 }
 
@@ -132,4 +41,10 @@ form {
 
 .bloco_pedido input {
   margin-left: 5%;
+}*/
+.container_items img {
+  object-fit: cover;
+
+  height: 200px;
+  min-width: 100%;
 }

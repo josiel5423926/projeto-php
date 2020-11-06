@@ -1,38 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php require("./includes/conexao.php"); ?>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-  <script src="js/funcoes.js"></script>
-  <title>Full Stack Motos</title>
-</head>
+<?php include('./menu_rodape/menu.html'); ?>
 
-<body>
-  <!--início do Menu-->
-  <?php
-  include('./menu_rodape/menu.html');
-  ?>
+<main class="py-5">
 
-  <!--fim do Menu-->
+  <div class="text-center">
+    <h1 class="h3 text-center p-3">Seja bem vindo(a)</h1>
+    <img class="py-2 rounded mx-auto d-block img-fluid" width="100px" src="img/logo.png" alt=""><br>
+    <h1 class="h3 text-center p-3">Venda de motos novas e usadas.</h1>
+  </div>
 
-  <main>
-    <!--título da págna início-->
-    <div class="main_titulo">
-      <h2>Seja bem vindo(a)</h2>
-      <br />
-      <h3>Venda de motos novas e usadas.</h3>
-    </div>
-    <hr />
-  </main>
-  <!--título da págna fim-->
+</main>
 
-  <!--rodapé-->
-  <?php
-  include('./menu_rodape/rodape.html');
-  ?>
-
-</body>
-
-</html>
+<?php include('./menu_rodape/rodape.html'); ?>

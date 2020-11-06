@@ -73,7 +73,7 @@ if (
             <input type=" text" name="valor_unitario" placeholder="Digite seu valor unitario: "></input> <br> <br>
             <label>quantidade:</label>
             <input type=" text" name="quantidade" placeholder="Digite seu Quantidade: "></input> <br> <br>
-            <label>valor total:</label>
+            <label>valor gittotal:</label>
             <input type=" text" name="valor_total" placeholder="Digite seu Valor total: "></input> <br><br>
             <div class="botão_formulario_venda">
                 <input type="submit" name="submit" value="Enviar" ">
