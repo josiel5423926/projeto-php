@@ -18,64 +18,71 @@ if (isset($_POST['nome']) && isset($_POST['msg'])) {
     <h1 class="h3 text-center p-3">Entre em contato</h1>
     <hr class="mt-0 mb-5">
 
-    <div class="contatos_imagem">
-        <table style="width:100%;text-align:center">
-            <tr>
-                <td>
-                    <img style="width:60px" src="img/email.png" alt="">
-                    contato@fullStackMotos.com.br
-                </td>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-around">
+            <div>
+                <img class="py-2 rounded mx-auto d-block img-fluid" width="50px" src="img/email.png" alt="">
+                contato@fullStackMotos.com.br
+            </div>
+            <div>
+                <img class="py-2 rounded mx-auto d-block img-fluid" width="50px" src="img/whatsapp.png" alt="">
+                (11) 9 5088-6634
+            </div>
+        </div>
 
-                <td>
-                    <img style="width:60px" src="img/whatsapp.png" alt="">
-                    (11) 9 5088-6634
-                </td>
-            </tr>
-        </table>
 
     </div>
 
-    <hr>
+    <hr class="mt-0 mb-5 ">
+    <form class="bg-white mx-auto p-2 m-1 col-12 col-md-4 text-center container-fluid" method="POST" action="">
+        <h1 class="text-center pb-5 text-primary">Fale conosco</h1>
 
+        <div class="form-group text-center">
+            <label for="formGroupExampleInput " class="text-primary  "> <strong>Nome:</strong></label>
+            <input type="text" name="nome" class="form-control" id="formGroupExampleInput" placeholder="Digite seu nome:">
+        </div>
+        <div class="form-group shadow-textarea text-center">
+            <label for="formGroupExampleInput " class="text-primary  "> <strong>Mensagem:</strong></label>
+            <textarea name="msg" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva sua mensagem:"></textarea>
+        </div>
 
-
-
-    <form method="POST" action="" target="_self" style="color:rgb(5, 55, 55); width: 50%;">
-        <label>Nome:</label>
-        <input type=" text" name="nome" placeholder="Digite seu nome: "></input> <br> <br>
-
-        <label>Mensagem:</label><br> <br>
-        <textarea name="msg" rows="10" cols="30" placeholder="Digite sua mensagem: "></textarea>
-        <br>
-        <br>
-        <input type="submit" name="submit" value="Enviar">
+        <div class="text-center p-3">
+            <button type="submit" name="submit" class="btn btn-outline-primary mb-3  px-4 rounded-pill ">Enviar</button>
+        </div>
     </form>
-    <br> <br>
-    <label>Comentários:</label>
-    <br> <br>
-    <div style="color:rgb(5, 55, 55); width: 30%; border: solid; padding: 10px;">
 
+    <hr class="p-auto">
+
+    <label>Comentários:</label>
+    <div class=" bg-white  col-3 col-md-12 p-3   ">
         <?php
-        $sql = "select * from comentario";
+        $sql = "select * from  comentario";
         $result = $conexao->query($sql);
 
         if ($result->num_rows > 0) {
             while ($rows = $result->fetch_assoc()) {
-                echo "Nome: ", $rows['nome'], "<br>";
-                echo "Mensagem: ", $rows['msg'], "<br>";
-                echo "Data: ", $rows['data'], "<br>";
-                echo "<hr>";
+
+        ?>
+                <div class="d-flex flex-column" style="width: 10rem;">
+                    <hr class="mt-2 mb-1">
+                    <h3 class="h5 text-primary "><?php echo $rows['nome']; ?></h3>
+                    <div class="text-secondary"> <?php echo $rows['msg']; ?></div>
+                    <div class="text-muted"><?php echo $rows['data']; ?></div>
+                    <div class="mt-0 mb-5 bg-light"> <?php echo '<hr>' ?></div>
+
+                </div>
+
+        <?php
             }
         } else {
-            echo "Nenhum comentário !";
-        } ?>
+            echo 'Nenhum comentário !';
+        }
+        mysqli_close($conexao);
+        ?>
+
 
     </div>
 
-
-
 </main>
+
 <?php include('./menu_rodape/rodape.html'); ?>
-<?php
-mysqli_close($conexao);
-?>
