@@ -53,7 +53,7 @@
                 while ($rows = $result->fetch_assoc()) {
 
             ?>
-                    <div class="card col-md-1 col-lg-3 ml-5  m-2  container_items border border-primary" id="<?php echo $rows['nome']; ?>" style="width: 10rem;">
+                    <div class="card col-md-1 col-lg-3 ml-5  m-2  container_items border border-primary" id="<?php echo $rows['categoria']; ?>" style="width: 10rem;">
                         <img class="card-img-top img-fluid m-1 " src="<?php echo $rows['imagem']; ?>" onclick="destaque(this)" onmousemove="exibirborda(this)" onmouseout="retirarborda(this)">
 
                         <hr class="mt-2 mb-1">

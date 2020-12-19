@@ -1,45 +1,46 @@
+create schema fullstackmotos;
 use fullstackmotos;
 
  
  
 create table produto(
 idproduto int primary key auto_increment,
-nome varchar(150) not null,
+categoria varchar(150) not null,
 descricao varchar(150) not null,
 preco  decimal(9,2) not null,
 preco_final decimal(9,2) not null,
 imagem varchar(200) not null)ENGINE=InnoDB ;
 
 
- -- drop table  produto;
+-- drop table  produto;
  
  -- DELETE FROM produto 
  -- WHERE idproduto = 6;
 
 select * from produto;
 
-insert into produto ( nome, descricao, preco, preco_final, imagem) value
+insert into produto ( categoria, descricao, preco, preco_final, imagem) value
  ('honda',' CBR 1000 ', 80000.00, 78000.00, 'img/honda_1.jpg'),
  ('honda','CB Twister CBS', 12000.00, 11000.00,'img/honda_2.jpg'),
 ('honda',' CB 600 2006', 22000.00, 21000.00, 'img/honda_3.jpg');
 
-insert into produto ( nome, descricao, preco, preco_final, imagem) value
+insert into produto ( categoria, descricao, preco, preco_final, imagem) value
  ('Yamaha','  R1', 90000.00, 87000.00, 'img/yamaha_1.jpg'),
 ('Yamaha','R3', 106500.00, 103000.00,'img/yamaha_3.jpg'),
 ('Yamaha',' R6', 22000.00, 19000.00, 'img/yamaha_2.jpg');
 
 
-insert into produto ( nome, descricao, preco, preco_final, imagem) value
+insert into produto ( categoria, descricao, preco, preco_final, imagem) value
 ('Ducati','  Monster 1200', 45000.00, 44000.00, 'img/ducati_2.jpg'),
 ('Ducati',' 1299 Panigale', 65000.00, 58000.00,'img/ducati_3.jpg');
 
 
-insert into produto ( nome, descricao, preco, preco_final, imagem) value
+insert into produto ( categoria, descricao, preco, preco_final, imagem) value
 ('Harley Davidson',' Harley Davidson Xl 883n', 53500.00, 44000.00, 'img/Harley_Davidson_2.jpg'),
 ('Harley Davidson','HD Streetfighter 975', 120000.00, 117000.00,'img/Harley_Davidson_4.jpg');
 
 
-insert into produto ( nome, descricao, preco, preco_final, imagem) value
+insert into produto ( categoria, descricao, preco, preco_final, imagem) value
 ('Kawasaki',' ER-6n', 93000.00, 89000.00, 'img/Kawasaki_1.jpg'),
 ('Kawasaki','Ninja', 85000.00, 78000.00,'img/Kawasaki_2.jpg');
 
@@ -63,7 +64,7 @@ insert into tb_pedido (nome_cliente, endereco, telefone,  nome_produto, valor_un
       values
       ('josiel',' teste', '56355326','honda', '78.000,00', '1','78.000,00');
 
-  select * from tb_pedido;
+ -- select * from tb_pedido;
   
   
  -- DELETE FROM tb_pedido 
@@ -78,7 +79,7 @@ msg varchar(200),
 data datetime default now(),
 primary key(id));
 
-select * from comentario;
+-- select * from comentario;
 -- drop table  comentario;
 
 

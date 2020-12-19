@@ -1,4 +1,7 @@
 <?php
+//header("Access-Control-Allow-Origin:*");
+//header("Content-type: application/json");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
